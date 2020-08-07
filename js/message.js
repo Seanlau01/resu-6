@@ -38,11 +38,10 @@
         let content=myForm.querySelector('input[name=content]').value
         this.model.save({'name':name,'content':content}).then(function(object){
             let li=document.createElement('li')
-            li.innerText=`${object.attributes.name}: ${object.attributes.content}`
+            li.innerText=`${object.attributes.name} 说: \r\n \r\n ${object.attributes.content}`
             let messageList=document.querySelector('#messageList')
             messageList.appendChild(li)
             myForm.querySelector('input[name=content]').value=''
-            console.log(object)
         })
     }
  })
