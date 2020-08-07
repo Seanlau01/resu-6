@@ -36,6 +36,9 @@
         let myForm=this.form
         let name=myForm.querySelector('input[name=name]').value
         let content=myForm.querySelector('input[name=content]').value
+        if(name==''||content==''){
+           return 
+        }
         this.model.save({'name':name,'content':content}).then(function(object){
             let li=document.createElement('li')
             li.innerText=`${object.attributes.name} 说: \r\n \r\n ${object.attributes.content}`
